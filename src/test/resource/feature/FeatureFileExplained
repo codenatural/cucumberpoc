@@ -1,0 +1,42 @@
+Feature: Is it Friday yet?
+  Everybody wants to know when it's Friday
+
+  Scenario: Sunday isn't Friday
+    Given today is Sunday
+    When I ask whether it's Friday yet
+    Then I should be told "Nope"
+    
+The first line of this file starts with the keyword Feature: followed by a name. It’s a good idea to use a name similar to the file name.
+
+The second line is a brief description of the feature. Cucumber does not execute this line because it’s documentation.
+
+The fourth line, Scenario: Sunday is not Friday is a scenario, which is a concrete example illustrating how the software should behave.
+
+The last three lines starting with Given, When and Then are the steps of our scenario. This is what Cucumber will execute.
+
+Scenario Outline - This is used to run the same scenario for 2
+or more different sets of test data. 
+E.g. In our scenario, if you want to register another user
+you can data drive the same scenario twice.
+
+Examples - All scenario outlines have to be followed with the Examples section.
+This contains the data that has to be passed on to the scenario.
+
+
+Scenario Outline:
+
+    This uses Example keyword to define the test data for the Scenario
+    This works for the whole test
+    Cucumber automatically run the complete test the number of times equal to the number of data in the Test Set
+    
+Data Table:
+Test Data:
+
+    No keyword is used to define the test data
+    This works only for the single step, below which it is defined
+    A separate code needs to understand the test data and then it can be run single or multiple times but again just for the single step, not for the complete test
+
+
+
+
+

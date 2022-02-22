@@ -1,0 +1,26 @@
+ A testable architecture enables fast and reliable tests
+ that are easy to write, execute and maintain.
+ 
+ Feature-coupled step definitions are step definitions
+ that can’t be reused across features or scenarios.
+ 
+ This may lead to an explosion of step definitions,
+ code duplication, and high maintenance costs.
+ 
+ How to decouple steps & step definitions
+
+  Organise your steps by domain concept.
+  Use domain-related names (rather than feature- 
+  or scenario-related names) for your step & step definition files.
+  
+ Don’t use steps that combine a bunch of different things.
+ This makes steps too specialised, and hard to reuse.
+ Cucumber has built-in support for conjunctions
+ (And, But) for a reason!
+ 
+ 
+  
+  
+ 
+ 
+

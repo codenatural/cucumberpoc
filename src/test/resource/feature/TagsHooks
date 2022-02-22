@@ -1,0 +1,84 @@
+As the name suggests Feature, 
+we tend to create a separate feature file for every other feature
+or functionality in an application. 
+We also try to keep all the related scenarios with in the same feature file and 
+this is the reason we end up having many scenarios in it.
+Every scenario comes with it's own prerequisites.
+To handle the same cucumber gives us many useful functionalities:
+
+
+    Tags
+    Hooks
+    Tagged Hooks
+    Execution Order of Hooks
+    Background
+
+
+Now there can be a certain situation in the project 
+where you like to execute just a SmokeTests or End2EndTests or 
+may be RegressionTests. 
+
+One approach is that you start creating new feature files 
+with the name of the type like SmokeTests.features or 
+End2EndTests.feature and copy-paste your existing tests in the same. 
+But this would make the project filthy and would require more 
+maintenance in future. So how to manage execution in such cases?
+
+
+Cucumber has already provided a way to organize your scenario execution 
+by using tags in feature file. We can define each scenario 
+with a useful tag. Later, in the runner file, we can decide which 
+specific tag (and so as the scenario(s)) we want Cucumber to execute. 
+Tag starts with “@”. After “@” you can have any relevant 
+text to define your tag like @SmokeTests just above the scenarios 
+you like to mark. Then to target these tagged scenarios just specify 
+the tags names in the CucumberOptions as tags = {"@SmokeTests"}.
+
+
+Tagging not just specifically works with Scenarios, 
+it also works with Features. Means you can also tag your 
+features files. Any tag that exists on a Feature will be inherited 
+by Scenario, Scenario Outline or Examples.
+
+
+
+tags={"@SmokeTest,@E2E"} - OR
+tags={"@SmokeTest AND @E2E"} - This will run both the tags AND
+tags={"@SmokeTest AND ~ @E2E"} - Execute all tests except E2E
+
+What are Hooks in Cucumber?
+
+Cucumber supports hooks, 
+which are blocks of code that run before or after each scenario.
+
+Unlike TestNG Annotations, cucumber supports only two hooks (Before & After) 
+which works at the start and the end of the test scenario.
+
+As the name suggests, @before hook gets executed well before any other test scenario, 
+and @after hook gets executed after executing the scenario.
+
+This scenario works till the time our prerequisites are the same
+for all the scenarios. For example till the time prerequisite
+for any test is to start the browser, hooks can solve our purpose.
+But what if we have different prequisites for different scenarios.
+And we need to have different hooks for different scenarios.
+
+Again, Cucumbers has given a feature of Tagged Hooks 
+to solve the above situation where we need to perform different 
+tasks before and after scenarios.
+
+Hooks can be used like @Before("@TagName").
+Create before and after hooks for every scenario.
+
+@Before & @After hooks run before & after every Scenario.
+But @Before("@First") will run only before the first scenario 
+and likewise other tagged hooks. Again, these tags names can be 
+anything and no need to be first, second and third.
+
+Execution Order of Hooks
+
+
+
+
+
+

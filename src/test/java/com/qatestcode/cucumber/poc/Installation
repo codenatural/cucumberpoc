@@ -1,0 +1,27 @@
+You will need the following:
+
+Java SE
+   A build tool. You can choose between:
+Maven - version 3.3.1 or higher
+Gradle
+IntelliJ IDEA (which will be used in this tutorial)
+   IntelliJ IDEA Cucumber for Java plugin
+Eclipse (a good alternative if you don’t use IntelliJ)
+   Cucumber Eclipse - Plugin
+   Natual - For Gherkins - Plugin
+   
+
+
+
+
+
+You can run following command:
+
+mvn archetype:generate   "-DarchetypeGroupId=io.cucumber" "-DarchetypeArtifactId=cucumber-archetype"  "-DarchetypeVersion=7.0.0" "-DgroupId=hellocucumber" "-DartifactId=hellocucumber" "-Dpackage=hellocucumber" 
+"-Dversion=1.0.0-SNAPSHOT" "-DinteractiveMode=false"
+
+
+
+
+   
+
